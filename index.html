@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Eventos</title>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link href="date/datedropper.css" rel="stylesheet" type="text/css" />
+
+<link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400">
+<link rel="stylesheet" href="search/css/normalize.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+  <script type="text/javascript" src="search/tipuesearch_set.js"></script>
+<script type="text/javascript" src="search/tipuesearch_content.js"></script>
+<link rel="stylesheet" type="text/css" href="search/css/tipuesearch.css">
+<script type="text/javascript" src="search/tipuesearch.min.js"></script>
+
+
+  <script src="date/datedropper.js"></script>
+
+
+
+  <link rel="stylesheet" href="index.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+
+
+  <nav>
+    <div class="nav-wrapper deep-orange">
+      <a href="index.html" class="brand-logo">Logo</a>
+
+      <form class="right hide-on-med-and-down search_sidebar" autocomplete="on" action="search.html">
+
+            
+       <input class="search" type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" required placeholder="Busca eventos">
+        <button class="btn white" type="submit">Buscar</button>
+
+      </form>
+    </div>
+  </nav>
+
+
+
+  <div class="row">
+
+    <div class="col s12 m2 sidebar">
+
+
+      <ul class="sidebar_menu list">
+        <li class="liting">Inicio <i class="fa fa-home" aria-hidden="true"></i></li>
+        <li class="liting">Ayuda <i class="fa fa-question-circle" aria-hidden="true"></i></li>
+        <br>
+        <hr>
+        <br>
+        <h5>Tipos de actividad</h5>
+        <li>
+          <div><img src="icons/sports.svg" alt="Ciclismo"> Deportes</div>
+          <ul>
+            <li class="liting"> <img src="icons/bici.svg" alt="Ciclismo"> Ciclismo</li>
+            <li class="liting"> <img src="icons/tenis.svg" alt="Tenis"> Tenis</li>
+            <li class="liting"> <img src="icons/running.svg" alt="Running">Running</li>
+            <li class="liting"> <img src="icons/natacion.svg" alt="Natacion">Natación</li>
+            <li class="liting"> <img src="icons/padel.svg" alt="Padel">Padel</li>
+
+          </ul>
+
+
+        </li>
+
+        <li class="liting"><img src="icons/film.svg" alt="Cine"> Cine</li>
+        <li class="liting"><img src="icons/talleres.svg" alt="Talleres"> Talleres</li>
+        <li class="liting"><img src="icons/cursos.svg" alt="Cursos"> Cursos</li>
+        <li class="liting"><img src="icons/help.svg" alt="Voluntariado"> Voluntariado</li>
+      </ul>
+      <br>
+      <hr>
+      <br>
+      <h5>Rango de edades</h5>
+      <ul class="sidebar_menu">
+        <li class="liting"><img src="icons/kid.svg" alt="Niños"> Para niños</li>
+        <li class="liting"><img src="icons/joven.svg" alt="Jovenes"> Para jóvenes</li>
+        <li class="liting"><img src="icons/adulto.svg" alt="Adultos"> Para adultos</li>
+        <li class="liting"><img src="icons/mayor.svg" alt="Mayores"> Para mayores de edad</li>
+      </ul>
+
+
+    </div>
+    <div class="col s12 m10">
+      <form class="filtros">
+        <div class="center">
+          <h5><i class="fa fa-filter" aria-hidden="true"></i> Filtrar resultados</h5>
+          <label>Fecha</label>
+          <input type="text" class="date" />
+
+          <label>Localización</label>
+          <select>
+     <option value="Mostoles">Móstoles</option>
+     <option value="Alcobendas">Alobendas</option>
+     <option value="Madrid">Madrid</option>
+
+   </select>
+
+          <label>Ordenar</label>
+          <select>
+     <option value="alfabet">Alfabéticamente A -> Z</option>
+     <option value="alfaabet">Alfabéticamente Z -> A</option>
+     <option value="fecha_ascen">Por fecha ascendente</option>
+     <option value="fecha_descen">Por fecha descendentemente</option>
+     <option value="valoracion_menos">Por valoraciones de mayor a menor</option>
+     <option value="valoracion_mayor">Por valoraciones de menosr a mayor</option>
+     
+
+   </select>
+
+          <button class="btn btn_filtrar"><i class="fa fa-search" aria-hidden="true"></i>  Filtrar</button>
+        </div>
+      </form>
+      <div class="container">
+
+<form action="search.html">
+
+</form>
+
+<div id="tipue_search_content"></div>
+        <h5 class="loc-info"></h5>
+
+        <a href="pages/esqui.html">
+          <div class="event">
+            <div class="row">
+              <div class="col l2 s12 event_img">
+                <img class="responsive-img" src="http://www.alquileresquissierranevada.com/images/portada/escuelaalpinadeesqui.jpg" alt="placeholder image" />
+              </div>
+              <div class="col l10 s12 event_info">
+                <div class="col l6 s12">
+                  <h5 class="event_name">Fin de semana de esquí en Candanchú</h5>
+                    Te proponemos un fin de semana esquiando en parajes naturales. El viaje cuenta con 50 plazas que se completarán segun el orden de inscripción.
+                  <div class="event_categories">
+                    <div class="chip">Deportes</div>
+                     <div class="chip">Para jóvenes</div><div class="chip">Para adultos</div><i class="fa fa-star" aria-hidden="true" style="color: yellow;"></i><i class="fa fa-star"
+                      aria-hidden="true" style="color: yellow;"></i><i class="fa fa-star" aria-hidden="true" style="color: yellow;"></i>
+                    <i
+                      class="fa fa-star" aria-hidden="true" style="color: yellow;"></i><i class="fa fa-star" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="col l3 s12 date">
+                  <div class="event_date_name"><i class="fa fa-calendar" aria-hidden="true"></i> Fecha del evento</div>
+                  <h5 class="event_date">10/03/2017</h5>
+
+                </div>
+                <div class="col l3 s12 loc">
+                  <div class="event_loc_name"><i class="fa fa-map-marker" aria-hidden="true"></i> Localización del evento</div>
+                  <h5 class="event_loc">Alcobendas</h5>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="event.html">
+          <div class="event">
+            <div class="row">
+              <div class="col l2 s12 event_img">
+                <img class="responsive-img" src="https://creativa7.es/wp-content/uploads/2017/01/hablar-en-publico.jpg" alt="placeholder image" />
+              </div>
+              <div class="col l10 s12 event_info">
+                <div class="col l6 s12">
+                  <h5 class="event_name">Talleres de orientación profesional</h5>
+                  Ofrecemos orientación y información para los jóvenes que finalizan los diferentes niveles educativos sobre las alternativas de formación.
+
+                  <div class="event_categories">
+                    <div class="chip">Talleres</div><div class="chip">Para adultos</div>
+                    <div class="chip">Para jóvenes</div><i class="fa fa-star" aria-hidden="true" style="color: yellow;"></i><i class="fa fa-star"
+                      aria-hidden="true" style="color: yellow;"></i><i class="fa fa-star" aria-hidden="true" style="color: yellow;"></i>
+                    <i
+                      class="fa fa-star" aria-hidden="true" style="color: yellow;"></i><i class="fa fa-star" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="col l3 s12 date">
+                  <div class="event_date_name"><i class="fa fa-calendar" aria-hidden="true"></i> Fecha del evento</div>
+                  <h5 class="event_date">01/03/2017</h5>
+
+                </div>
+                <div class="col l3 s12 loc">
+                  <div class="event_loc_name"><i class="fa fa-map-marker" aria-hidden="true"></i> Localización del evento</div>
+                  <h5 class="event_loc">Alcobendas</h5>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="pages/futbol.html">
+          <div class="event">
+            <div class="row">
+              <div class="col l2 s12 event_img">
+                <img class="responsive-img" src="https://ae01.alicdn.com/kf/HTB1VlOZJFXXXXXmXVXXq6xXFXXXl/Para-mujer-para-hombre-de-f%C3%BAtbol-zapatos-de-deporte-zapatillas-de-deporte-picos-largos-FG-hombres.jpg" alt="placeholder image" />
+              </div>
+              <div class="col l10 s12 event_info">
+                <div class="col l6 s12">
+                  <h5 class="event_name">Partido de fútbol en Madrid</h5>
+                  Real Madrid - Barsa un partidazo clásico para disfrutar con la familia.
+
+                  <div class="event_categories">
+                    <div class="chip">Deportes</div>
+                    <div class="chip">Para jóvenes</div><i class="fa fa-star" aria-hidden="true" style="color: yellow;"></i><i class="fa fa-star"
+                      aria-hidden="true" style="color: yellow;"></i><i class="fa fa-star" aria-hidden="true" style="color: yellow;"></i>
+                    <i
+                      class="fa fa-star" aria-hidden="true" style="color: yellow;"></i><i class="fa fa-star" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="col l3 s12 date">
+                  <div class="event_date_name"><i class="fa fa-calendar" aria-hidden="true"></i> Fecha del evento</div>
+                  <h5 class="event_date">12/05/2017</h5>
+
+                </div>
+                <div class="col l3 s12 loc">
+                  <div class="event_loc_name"><i class="fa fa-map-marker" aria-hidden="true"></i> Localización del evento</div>
+                  <h5 class="event_loc">Madrid</h5>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </a>
+
+        <a href="pages/pintura.html">
+          <div class="event">
+            <div class="row">
+              <div class="col l2 s12 event_img">
+                <img class="responsive-img" src="http://www.grupovivit.es/img/pisos-venta-alcaladeguadaira.jpg" alt="placeholder image" />
+              </div>
+              <div class="col l10 s12 event_info">
+                <div class="col l6 s12">
+                  <h5 class="event_name">Exposición de pintura</h5>
+                 Una fantástica exposición de los mejores artistas nacionales e internacionales
+
+                  <div class="event_categories">
+                    <div class="chip">Deportes</div>
+                    <div class="chip">Para adultos</div><i class="fa fa-star" aria-hidden="true" style="color: yellow;"></i><i class="fa fa-star"
+                      aria-hidden="true" style="color: yellow;"></i><i class="fa fa-star" aria-hidden="true" style="color: yellow;"></i>
+                    <i
+                      class="fa fa-star" aria-hidden="true" style="color: yellow;"></i><i class="fa fa-star" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="col l3 s12 date">
+                  <div class="event_date_name"><i class="fa fa-calendar" aria-hidden="true"></i> Fecha del evento</div>
+                  <h5 class="event_date">22/05/2017</h5>
+
+                </div>
+                <div class="col l3 s12 loc">
+                  <div class="event_loc_name"><i class="fa fa-map-marker" aria-hidden="true"></i> Localización del evento</div>
+                  <h5 class="event_loc">Madrid</h5>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </a>
+
+         <a href="pages/natacion.html">
+          <div class="event">
+            <div class="row">
+              <div class="col l2 s12 event_img">
+                <img class="responsive-img" src="http://lorempixel.com/150/150/sports/7" alt="placeholder image" />
+              </div>
+              <div class="col l10 s12 event_info">
+                <div class="col l6 s12">
+                  <h5 class="event_name">Competición de natación</h5>
+                  Campeonato de España de natación. Inscripciones abiertas
+
+                  <div class="event_categories">
+                    <div class="chip">Deportes</div>
+                    <div class="chip">Para jóvenes</div><i class="fa fa-star" aria-hidden="true" style="color: yellow;"></i><i class="fa fa-star"
+                      aria-hidden="true" style="color: yellow;"></i><i class="fa fa-star" aria-hidden="true" style="color: yellow;"></i>
+                    <i
+                      class="fa fa-star" aria-hidden="true" style="color: yellow;"></i><i class="fa fa-star" aria-hidden="true"></i>
+                  </div>
+                </div>
+                <div class="col l3 s12 date">
+                  <div class="event_date_name"><i class="fa fa-calendar" aria-hidden="true"></i> Fecha del evento</div>
+                  <h5 class="event_date">12/05/2017</h5>
+
+                </div>
+                <div class="col l3 s12 loc">
+                  <div class="event_loc_name"><i class="fa fa-map-marker" aria-hidden="true"></i> Localización del evento</div>
+                  <h5 class="event_loc">Móstoles</h5>
+                </div>
+
+              </div>
+            </div>
+          </div>
+        </a>
+
+
+      </div>
+
+    </div>
+
+
+
+    <script>
+      $('.list > li div').click(function () {
+        $(this).parent().find('ul').toggle();
+      });
+
+      $('.date').dateDropper();
+
+      $(".sidebar").on('click', '.liting', function () {
+        $(".loc-info").text($(this).text());
+      });
+    </script>
+
+</body>
+
+</html>
+
+

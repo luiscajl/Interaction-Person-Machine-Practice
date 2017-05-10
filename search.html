@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Eventos</title>
+
+  <script src="https://code.jquery.com/jquery-3.2.1.js" integrity="sha256-DZAnKJ/6XZ9si04Hgrsxu/8s717jcIzLy3oi35EouyE=" crossorigin="anonymous"></script>
+
+  <!-- Compiled and minified CSS -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/css/materialize.min.css">
+
+  <!-- Compiled and minified JavaScript -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.1/js/materialize.min.js"></script>
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <link href="date/datedropper.css" rel="stylesheet" type="text/css" />
+
+<link href="http://fonts.googleapis.com/css?family=Roboto:100,300,400">
+<link rel="stylesheet" href="search/css/normalize.css">
+
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+
+
+  <script type="text/javascript" src="search/tipuesearch_set.js"></script>
+<script type="text/javascript" src="search/tipuesearch_content.js"></script>
+<link rel="stylesheet" type="text/css" href="search/css/tipuesearch.css">
+<script type="text/javascript" src="search/tipuesearch.min.js"></script>
+
+
+  <script src="date/datedropper.js"></script>
+
+
+
+  <link rel="stylesheet" href="index.css">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+</head>
+
+<body>
+
+
+
+ <nav>
+    <div class="nav-wrapper deep-orange">
+      <a href="index.html" class="brand-logo">Logo</a>
+
+      <form class="right hide-on-med-and-down search_sidebar" autocomplete="on" action="search.html">
+
+            
+       <input class="search" type="text" name="q" id="tipue_search_input" pattern=".{3,}" title="At least 3 characters" required placeholder="Busca eventos">
+        <button class="btn white" type="submit">Buscar</button>
+
+      </form>
+    </div>
+  </nav>
+
+
+
+  <div class="row">
+
+    <div class="col s12 m2 sidebar">
+
+
+      <ul class="sidebar_menu list">
+        <li class="liting">Inicio <i class="fa fa-home" aria-hidden="true"></i></li>
+        <li class="liting">Ayuda <i class="fa fa-question-circle" aria-hidden="true"></i></li>
+        <br>
+        <hr>
+        <br>
+        <h5>Tipos de actividad</h5>
+        <li>
+          <div><img src="icons/sports.svg" alt="Ciclismo"> Deportes</div>
+          <ul>
+            <li class="liting"> <img src="icons/bici.svg" alt="Ciclismo"> Ciclismo</li>
+            <li class="liting"> <img src="icons/tenis.svg" alt="Tenis"> Tenis</li>
+            <li class="liting"> <img src="icons/running.svg" alt="Running">Running</li>
+            <li class="liting"> <img src="icons/natacion.svg" alt="Natacion">Natación</li>
+            <li class="liting"> <img src="icons/padel.svg" alt="Padel">Padel</li>
+
+          </ul>
+
+
+        </li>
+
+        <li class="liting"><img src="icons/film.svg" alt="Cine"> Cine</li>
+        <li class="liting"><img src="icons/talleres.svg" alt="Talleres"> Talleres</li>
+        <li class="liting"><img src="icons/cursos.svg" alt="Cursos"> Cursos</li>
+        <li class="liting"><img src="icons/help.svg" alt="Voluntariado"> Voluntariado</li>
+      </ul>
+      <br>
+      <hr>
+      <br>
+      <h5>Rango de edades</h5>
+      <ul class="sidebar_menu">
+        <li class="liting"><img src="icons/kid.svg" alt="Niños"> Para niños</li>
+        <li class="liting"><img src="icons/joven.svg" alt="Jovenes"> Para jóvenes</li>
+        <li class="liting"><img src="icons/adulto.svg" alt="Adultos"> Para adultos</li>
+        <li class="liting"><img src="icons/mayor.svg" alt="Mayores"> Para mayores de edad</li>
+      </ul>
+
+
+    </div>
+    <div class="col s12 m10">
+      <form class="filtros">
+        <div class="center">
+          <h5><i class="fa fa-filter" aria-hidden="true"></i> Filtrar resultados</h5>
+          <label>Fecha</label>
+          <input type="text" class="date" />
+
+          <label>Localización</label>
+          <select>
+     <option value="Mostoles">Móstoles</option>
+     <option value="Alcobendas">Alobendas</option>
+     <option value="Madrid">Madrid</option>
+
+   </select>
+
+          <label>Ordenar</label>
+          <select>
+     <option value="alfabet">Alfabéticamente A -> Z</option>
+     <option value="alfaabet">Alfabéticamente Z -> A</option>
+     <option value="fecha_ascen">Por fecha ascendente</option>
+     <option value="fecha_descen">Por fecha descendentemente</option>
+     <option value="valoracion_menos">Por valoraciones de mayor a menor</option>
+     <option value="valoracion_mayor">Por valoraciones de menosr a mayor</option>
+     
+
+   </select>
+
+          <button class="btn btn_filtrar"><i class="fa fa-search" aria-hidden="true"></i>  Filtrar</button>
+        </div>
+      </form>
+      <div class="container">
+
+<div id="tipue_search_content"></div>
+        <h5 class="loc-info"></h5>
+
+       
+
+
+      </div>
+
+    </div>
+
+
+
+    <script>
+      $('.list > li div').click(function () {
+        $(this).parent().find('ul').toggle();
+      });
+
+      $('.date').dateDropper();
+
+      $(".sidebar").on('click', '.liting', function () {
+        $(".loc-info").text($(this).text());
+      });
+    </script>
+
+<script>
+$(document).ready(function() {
+     $('#tipue_search_input').tipuesearch();
+});
+</script>
+
+</body>
+
+</html>
+
+
